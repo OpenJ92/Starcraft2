@@ -5,15 +5,16 @@ Email: jacob.vartuli.schonberg@gmail.com
 Github: https://github.com/OpenJ92
 Description: 
 """
+from os import listdir
+from random import sample
+
+from sc2reader import load_replay
 
 from Explore.objects import Objects
 from Explore.events import Events
 from Explore.datapack import Data_Pack
 from Explore.active_units import Active_Units
-
-from os import listdir
-from random import sample
-from sc2reader import load_replay
+from Explore.tracker_events import Tracker_Events
 
 class Explore(object):
 
@@ -47,3 +48,4 @@ if __name__ == "__main__":
     DPack = Data_Pack(replay)
     E = Events(replay)
     O = Objects(replay)
+    TE = Tracker_Events(replay)
