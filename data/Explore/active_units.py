@@ -39,6 +39,7 @@ class Active_Units():
         """
         self.get_unique()
         unique_objects = self.__class__.dct
+        __import__('pdb').set_trace()
         for key, data in unique_objects.items():
             if data.keys() not in self.__class__.dct_:
                 self.__class__.dct_[data.keys()] = key

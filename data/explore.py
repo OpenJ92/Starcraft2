@@ -20,11 +20,14 @@ class Explore(object):
 
     """Docstring for Explore. """
 
-    def __init__(self,directory, samples=25, load_level=4):
+    def __init__(self, directory, method, samples=25, load_level=4):
         """TODO: to be defined.
         :directory: TODO
+        :samples: TODO
+        :load_level: TODO
         """
         self._directory = directory
+        self._method = method
         self._samples = samples
         self._load_level = load_level
         self._replays = self._load_replays()
