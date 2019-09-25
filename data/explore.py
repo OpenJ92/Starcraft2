@@ -8,7 +8,11 @@ Description:
 from os import listdir
 from random import sample
 
+import sc2reader
 from sc2reader import load_replay
+from sc2reader.engine.plugins import APMTracker, SelectionTracker
+sc2reader.engine.register_plugin(APMTracker())
+sc2reader.engine.register_plugin(SelectionTracker())
 
 from Explore.objects import Objects
 from Explore.events import Events
@@ -53,8 +57,8 @@ class Explore(object):
 if __name__ == "__main__":
     path = "3.10.0.49716" 
     path_ = "3.11.0.51149" 
-    Oexplore = Explore(path, Objects, samples=0)
-    Eexplore = Explore(path, Events, samples=9)
-    Dexplore = Explore(path, Data_Pack, samples=0)
-    Aexplore = Explore(path, Active_Units, samples=0)
-    TEexplore = Explore(path, Tracker_Events, samples=0)
+    Oexplore = Explore(path, Objects, samples=10)
+    Eexplore = Explore(path, Events, samples=10)
+    Dexplore = Explore(path, Data_Pack, samples=10)
+    Aexplore = Explore(path, Active_Units, samples=10)
+    TEexplore = Explore(path, Tracker_Events, samples=10)
