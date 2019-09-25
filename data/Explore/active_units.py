@@ -25,3 +25,4 @@ class Active_Units(Base):
         """
         objects = self._replay.active_units.values()
         self.dct_object(self.__class__.dct, objects)
+

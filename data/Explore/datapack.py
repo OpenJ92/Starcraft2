@@ -11,7 +11,8 @@ from Explore.Base import Base
 class Data_Pack(Base):
     """Docstring for Data_Pack. """
     # Class Attributes
-    dct = {}
+    units = {}
+    abilities = {}
 
     def __init__(self, replay):
         """TODO: to be defined.
@@ -23,7 +24,9 @@ class Data_Pack(Base):
     def construct_dct(self):
         """TODO: Docstring for get_unique.
         """
-        abilities = [*self._replay.datapack.abilities.values()]
         units = [*self._replay.datapack.units.values()]
+        abilities = [*self._replay.datapack.abilities.values()]
         objects = abilities + units
-        self.dct_object(self.__class__.dct, objects)
+
+        self.dct_object(self.__class__.units, units)
+        self.dct_object(self.__class__.abilities, abilities)

@@ -20,14 +20,14 @@ class Explore(object):
 
     """Docstring for Explore. """
 
-    def __init__(self, directory, method, samples=25, load_level=4):
+    def __init__(self, directory, cls, samples=25, load_level=4):
         """TODO: to be defined.
         :directory: TODO
         :samples: TODO
         :load_level: TODO
         """
         self._directory = directory
-        self._method = method
+        self._cls = cls
         self._samples = samples
         self._load_level = load_level
         self._replays = self._load_replays()
@@ -43,11 +43,21 @@ class Explore(object):
             replays.append(replay)
         return replays
 
+    def exp_cls(self):
+        """TODO: Docstring for exp_cls.
+
+        :cls: TODO
+        :returns: TODO
+
+        """
+        for replay in self._replays:
+            self._cls(replay).construct_dct()
+
 if __name__ == "__main__":
     path = "3.10.0.49716" 
     path_ = "3.11.0.51149" 
+    explore = Explore(path, Data_Pack)
     replay = load_replay(f"{path}/{listdir(path)[8]}", load_level=4)
-    AU = Active_Units(replay)
     DPack = Data_Pack(replay)
     E = Events(replay)
     O = Objects(replay)
