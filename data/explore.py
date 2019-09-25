@@ -53,5 +53,8 @@ class Explore(object):
 if __name__ == "__main__":
     path = "3.10.0.49716" 
     path_ = "3.11.0.51149" 
-    Aexplore = Explore(path, Active_Units)
-    Oexplore = Explore(path, Objects)
+    Oexplore = Explore(path, Objects, samples=0)
+    Eexplore = Explore(path, Events, samples=9)
+    Dexplore = Explore(path, Data_Pack, samples=0)
+    Aexplore = Explore(path, Active_Units, samples=0)
+    TEexplore = Explore(path, Tracker_Events, samples=0)

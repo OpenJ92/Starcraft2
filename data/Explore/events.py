@@ -12,6 +12,7 @@ class Events(Base):
     """Docstring for Events. """
     # Class Attributes
     dct = {}
+    unq_dct = {}
 
     def __init__(self, replay):
         """TODO: to be defined.
@@ -25,3 +26,4 @@ class Events(Base):
         """
         objects = self._replay.events
         self.dct_object(self.__class__.dct, objects)
+        self.unq_dct_(self.__class__.dct, self.__class__.unq_dct)

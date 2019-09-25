@@ -12,6 +12,7 @@ class Objects(Base):
     """Docstring for Objects. """
     # Class Attributes
     dct = {}
+    unq_dct = {}
 
     def __init__(self, replay):
         """TODO: to be defined.
@@ -25,4 +26,5 @@ class Objects(Base):
         """
         objects = self._replay.objects.values()
         self.dct_object(self.__class__.dct, objects)
+        self.unq_dct_(self.__class__.dct, self.__class__.unq_dct)
         

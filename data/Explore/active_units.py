@@ -12,6 +12,7 @@ class Active_Units(Base):
     """Docstring for Active_Units. """
     # Class Attributes
     dct = {}
+    unq_dct = {}
 
     def __init__(self, replay):
         """TODO: to be defined.
@@ -25,4 +26,6 @@ class Active_Units(Base):
         """
         objects = self._replay.active_units.values()
         self.dct_object(self.__class__.dct, objects)
+        self.unq_dct_(self.__class__.dct, self.__class__.unq_dct)
+
 

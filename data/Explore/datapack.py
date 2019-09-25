@@ -13,6 +13,8 @@ class Data_Pack(Base):
     # Class Attributes
     units = {}
     abilities = {}
+    unq_dct_U = {}
+    unq_dct_A = {}
 
     def __init__(self, replay):
         """TODO: to be defined.
@@ -30,3 +32,6 @@ class Data_Pack(Base):
 
         self.dct_object(self.__class__.units, units)
         self.dct_object(self.__class__.abilities, abilities)
+
+        self.unq_dct_(self.__class__.units, self.__class__.unq_dct_U)
+        self.unq_dct_(self.__class__.abilities, self.__class__.unq_dct_A)
