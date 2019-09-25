@@ -46,7 +46,7 @@ class Explore(object):
 if __name__ == "__main__":
     path = "3.10.0.49716" 
     path_ = "3.11.0.51149" 
-    replay = load_replay(f"{path}/{listdir(path)[3]}", load_level=4)
+    replay = load_replay(f"{path}/{listdir(path)[8]}", load_level=4)
     AU = Active_Units(replay)
     DPack = Data_Pack(replay)
     E = Events(replay)

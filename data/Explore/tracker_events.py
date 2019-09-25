@@ -6,10 +6,10 @@ Github: https://github.com/OpenJ92
 Description:
 """
 
-class Tracker_Events(object):
+from Explore.Base import Base
 
+class Tracker_Events(Base):
     """Docstring for Tracker_Events. """
-
     # Class Attributes
     dct = {}
 
@@ -17,15 +17,12 @@ class Tracker_Events(object):
         """TODO: to be defined.
         :replay: TODO
         """
+        Base.__init__(self)
         self._replay = replay
         
-    def get_unique(self):
+    def construct_dct(self):
         """TODO: Docstring for get_unique.
         :returns: TODO
         """
-
         objects = self._replay.tracker_events
-
-        for data in objects:
-            if data.name not in self.__class__.dct.keys():
-                self.__class__.dct[data.name] = {key: type(data) for key, data in vars(data).items()}
+        self.dct_object(self.__class__.dct, objects)

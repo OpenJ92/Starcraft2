@@ -6,7 +6,9 @@ Github: https://github.com/OpenJ92
 Description: 
 """
 
-class Events(object):
+from Explore.Base import Base
+
+class Events(Base):
     """Docstring for Events. """
     # Class Attributes
     dct = {}
@@ -15,13 +17,11 @@ class Events(object):
         """TODO: to be defined.
         :replay: TODO
         """
+        Base.__init__(self)
         self._replay = replay
 
-    def get_unique(self):
+    def construct_dct(self):
         """TODO: Docstring for get_unique.
         """
-        events = self._replay.events
-        for data in events:
-            if data.name not in self.__class__.dct.keys():
-                self.__class__.dct[data.name] = vars(data)
-
+        objects = self._replay.events
+        self.dct_object(self.__class__.dct, objects)
