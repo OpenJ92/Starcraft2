@@ -45,10 +45,7 @@ class Explore(object):
 
     def exp_cls(self):
         """TODO: Docstring for exp_cls.
-
-        :cls: TODO
         :returns: TODO
-
         """
         for replay in self._replays:
             self._cls(replay).construct_dct()
@@ -56,9 +53,5 @@ class Explore(object):
 if __name__ == "__main__":
     path = "3.10.0.49716" 
     path_ = "3.11.0.51149" 
-    explore = Explore(path, Data_Pack)
-    replay = load_replay(f"{path}/{listdir(path)[8]}", load_level=4)
-    DPack = Data_Pack(replay)
-    E = Events(replay)
-    O = Objects(replay)
-    TE = Tracker_Events(replay)
+    Aexplore = Explore(path, Active_Units)
+    Oexplore = Explore(path, Objects)

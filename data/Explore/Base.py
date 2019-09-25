@@ -29,12 +29,12 @@ class Base(object):
                 dct_temp = {}
                 for key, data in vars(data_).items():
                     if isinstance(data, OrderedDict):
-                        dct_temp[key] = {type(i):type(j) for i, j  in data.items()}
+                        dct_temp[key] = {i:j for i, j  in data.items()}
                     elif isinstance(data, dict):
-                        dct_temp[key] = {type(i):type(j) for i, j  in data.items()}
+                        dct_temp[key] = {i:j for i, j  in data.items()}
                     elif isinstance(data, list):
-                        dct_temp[key] = [type(sub) for sub in data]
+                        dct_temp[key] = [sub for sub in data]
                     else:
-                        dct_temp[key] = type(data)
+                        dct_temp[key] = data
 
                 dct[data_.name] = dct_temp
