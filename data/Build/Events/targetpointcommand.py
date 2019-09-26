@@ -1,16 +1,16 @@
 """
-File: basiccommand.py
+File: targetpointcommand.py
 Author: Jacob Vartuli-Schonberg
 Email: jacob.vartuli.schonberg@gmail.com
 Github: https://github.com/OpenJ92
 Description: 
 """
 
-class BasicCommand(object):
+class TargetPointCommand(object):
 
-    """Docstring for BasicCommand. """
+    """Docstring for TargetPointCommand. """
 
-    def __init__(self, pid, player, frame, second, is_local, name, flags, flag, has_ability, ability_link, command_index, ability_data, ability_id, ability, ability_name, ability_type, ability_type_data, other_unit_id, other_unit):
+    def __init__(self, pid, player, frame, second, is_local, name, flags, flag, has_ability, ability_link, command_index, ability_data, ability_id, ability, ability_name, ability_type, ability_type_data, other_unit_id, other_unit, x, y, z, location):
         """TODO: to be defined.
 
         :pid: TODO
@@ -32,6 +32,10 @@ class BasicCommand(object):
         :ability_type_data: TODO
         :other_unit_id: TODO
         :other_unit: TODO
+        :x: TODO
+        :y: TODO
+        :z: TODO
+        :location: TODO
 
         """
         self._pid = pid
@@ -53,5 +57,9 @@ class BasicCommand(object):
         self._ability_type_data = ability_type_data
         self._other_unit_id = other_unit_id
         self._other_unit = other_unit
+        self._x = x
+        self._y = y
+        self._z = z
+        self._location = location
         
 

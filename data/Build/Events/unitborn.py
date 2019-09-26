@@ -45,5 +45,3 @@ class UnitBorn(object):
         self._x = x
         self._y = y
         self._location = location
-        
-
