@@ -6,6 +6,10 @@ Github: https://github.com/OpenJ92
 Description: 
 """
 
+import json
+from os import listdir
+from re import match
+
 from Explore.Base import Base
 
 class Data_Pack(Base):
@@ -24,7 +28,7 @@ class Data_Pack(Base):
         self._replay = replay
 
     def construct_dct(self):
-        """TODO: Docstring for get_unique.
+        """TODO: Docstring for construct_dct.
         """
         units = [*self._replay.datapack.units.values()]
         abilities = [*self._replay.datapack.abilities.values()]
@@ -35,3 +39,20 @@ class Data_Pack(Base):
 
         self.unq_dct_(self.__class__.units, self.__class__.unq_dct_U)
         self.unq_dct_(self.__class__.abilities, self.__class__.unq_dct_A)
+
+    def construct_json(self,):
+        """TODO: Docstring for construct_json.
+        :returns: TODO
+        """
+        if not self.__class__.units and self.__class__.abilities:
+            self.construct_dct()
+        
+        dir_ = "".join(self._replay.versions[1,-1])
+        __import__('pdb').set_trace()
+        if not dir_ in listdir():
+            with open(f"{dir_}/{dir_}.json") as doc:
+                pass
+            # if this replay's version does not exists
+            # in the ability or unit directory , then make
+            # that directory
+            pass 

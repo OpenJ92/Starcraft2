@@ -55,10 +55,13 @@ class Explore(object):
             self._cls(replay).construct_dct()
 
 if __name__ == "__main__":
-    path = "3.10.0.49716" 
-    path_ = "3.11.0.51149" 
-    Oexplore = Explore(path, Objects, samples=10)
-    Eexplore = Explore(path, Events, samples=10)
-    Dexplore = Explore(path, Data_Pack, samples=10)
-    Aexplore = Explore(path, Active_Units, samples=10)
-    TEexplore = Explore(path, Tracker_Events, samples=10)
+    from re import match
+    import os
+
+    dirs = [dir_ for dir_ in os.listdir() if match(r"(\d+\.){3}\d+", dir_)]
+    
+    Oexplore = Explore(dirs[-1], Objects, samples=1)
+    Eexplore = Explore(dirs[-1], Events, samples=1)
+    Dexplore = Explore(dirs[-1], Data_Pack, samples=1)
+    Aexplore = Explore(dirs[-1], Active_Units, samples=1)
+    TEexplore = Explore(dirs[-1], Tracker_Events, samples=1)
