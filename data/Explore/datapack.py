@@ -47,12 +47,14 @@ class Data_Pack(Base):
         if not self.__class__.units and self.__class__.abilities:
             self.construct_dct()
         
-        dir_ = "".join(self._replay.versions[1,-1])
+        dir_ = self._replay.versions[1:-1]
         __import__('pdb').set_trace()
         if not dir_ in listdir():
-            with open(f"{dir_}/{dir_}.json") as doc:
+            for _dir in ["Ability, Unit"]:
+                #with open(f"{_dir}/{dir_}/{dir_}.json") as doc:
+                #    pass
+                # if this replay's version does not exists
+                # in the ability or unit directory , then make
+                # that directory
                 pass
-            # if this replay's version does not exists
-            # in the ability or unit directory , then make
-            # that directory
             pass 
